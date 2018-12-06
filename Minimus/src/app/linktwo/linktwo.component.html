@@ -1,3 +1,32 @@
-<p>
-  linktwo works!
-</p>
+<div class="row mt-5">
+    <div class="col-lg-4">
+        <button type="button" routerLink="/links" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Go Back</button>
+    </div>
+  </div>
+  <div class="row mt-5" *ngIf="showloader">
+      <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              Loading....
+            </div>
+            <div class="card-body" style="text-align:center;">
+                <img  alt="" src="/assets/images/2.gif">
+                <ngb-progressbar showValue="true" type="success" [value]="progressNumber"></ngb-progressbar>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="row mt-5" *ngIf="!showloader">
+      <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              Success
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success" role="alert">
+                    <h3>You have successfully done this link 2 task! Go ahead with other links</h3>
+                  </div>
+            </div>
+          </div>   
+      </div>
+  </div>
