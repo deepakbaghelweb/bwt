@@ -36,7 +36,15 @@ export class DetailComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }
-      localStorage.setItem('userInformation', this.registerForm.value);
+      
+
+      var userInformation = { 'Name': this.registerForm.value.Name, 
+                          'Email': this.registerForm.value.Email, 
+                          'Gender': this.registerForm.value.Gender, 
+                          'Frequentwebuser': this.registerForm.value.webuserRadios, 
+                          'knowprogressindicator': this.registerForm.value.progressRadios };
+
+      localStorage.setItem('userInformation', JSON.stringify(userInformation));
 
       this.router.navigate(['/links']);
   }
