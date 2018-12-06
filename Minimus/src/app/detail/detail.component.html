@@ -1,34 +1,34 @@
   <div class="row mt-5">
       <div class="col-lg-8 offset-lg-2">
-          <form>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                   <label for="exampleInputEmail1" class="font-weight-bold">Name</label>
-                  <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Full Name">
+                  <input type="text" class="form-control" name="Name" formControlName="Name" aria-describedby="emailHelp" placeholder="Full Name">
               </div>
               <div class="form-group">
                   <label for="exampleInputEmail1" class="font-weight-bold">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" name="Email" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
               </div>
               <div class="form-group">
                   <label for="exampleInputEmail1" class="font-weight-bold">Age</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter age">
+                  <input type="number" class="form-control" name="Age" formControlName="Age" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter age">
               </div>
               <div class="form-group">
                   <label for="gender" class="font-weight-bold">Gender</label>
                   <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Male" checked>
+                          <input class="form-check-input" name="Gender" formControlName="Gender" type="radio"  id="exampleRadios1" value="Male" >
                           <label class="form-check-label" for="exampleRadios1">
                               Male
                           </label>
                   </div>
                   <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Female">
+                      <input class="form-check-input"  name="Gender" formControlName="Gender" type="radio"  id="exampleRadios2" value="Female">
                       <label class="form-check-label" for="exampleRadios2">
                           Female
                       </label>
                   </div>
                   <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="Don'twanttospecify">
+                          <input class="form-check-input" type="radio" name="Gender" formControlName="Gender" id="exampleRadios3" value="Don'twanttospecify">
                           <label class="form-check-label" for="exampleRadios3">
                                   Don't want to specify
                           </label>
@@ -37,13 +37,13 @@
               <div class="form-group">
                   <label for="gender" class="font-weight-bold">Are you a frequent web user?</label>
                   <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="webuserRadios" id="webuser1" value="Yes" checked>
+                          <input class="form-check-input" name="webuserRadios"  formControlName="webuserRadios" type="radio"  id="webuser1" value="Yes" >
                           <label class="form-check-label" for="webuser1">
                               Yes
                           </label>
                   </div>
                   <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="webuserRadios" id="webuser2" value="No">
+                      <input class="form-check-input" type="radio" name="webuserRadios" formControlName="webuserRadios" id="webuser2" value="No">
                       <label class="form-check-label" for="webuser2">
                           No
                       </label>
@@ -52,25 +52,27 @@
               <div class="form-group">
                   <label for="gender" class="font-weight-bold">Have you seen progress indicators while using any website?</label>
                   <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="progressRadios" id="progressRadios1" value="Yes" checked>
+                          <input class="form-check-input" name="progressRadios" formControlName="progressRadios" type="radio"  id="progressRadios1" value="Yes" >
                           <label class="form-check-label" for="progressRadios1">
                               Yes
                           </label>
                   </div>
                   <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="progressRadios" id="progressRadios2" value="No">
+                      <input class="form-check-input" type="radio" name="progressRadios" formControlName="progressRadios"  id="progressRadios2" value="No" >
                       <label class="form-check-label" for="progressRadios2">
                           No
                       </label>
                   </div>
                   <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="progressRadios" id="progressRadios3" value="No">
+                          <input class="form-check-input" type="radio" name="progressRadios" formControlName="progressRadios"  id="progressRadios3" value="dontknow" >
                           <label class="form-check-label" for="progressRadios3">
                               Don't know
                           </label>
                       </div>
               </div>
-              <a class="btn btn-primary" routerLink="/links" role="button">Next<i class="fas fa-arrow-right"></i></a>
+              <div class="form-group">
+                    <button class="btn btn-primary" role="button">Next<i class="fas fa-arrow-right"></i></button>
+              </div>
           </form>
       </div>
   </div>

@@ -23,12 +23,12 @@ export class LinktwoComponent implements OnInit {
       this.progressNumber =0;     
       this.showloader = true;
    
-const source = interval(40);
+const source = interval(100);
   const subscribe = source.subscribe((val) => {
     this.progressNumber = val;
-    if(val == 90){
+    if(val == 100){
       subscribe.unsubscribe();
-      this.progressNumber = 90; 
+      this.showloader =false; 
     }
   });
 

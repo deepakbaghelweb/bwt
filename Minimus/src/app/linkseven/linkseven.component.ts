@@ -15,7 +15,7 @@ export class LinksevenComponent implements OnInit {
       //wait 3 Seconds and hide
       setTimeout(function() {
           this.showloader = false;
-      }.bind(this), 2000);
+      }.bind(this), 600000);
   }
 
 }
